@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoVista Car Rentals</title>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <nav class="fixed top-0 left-0 z-50 w-full">
+
+            <div class="bg-[#F160AD]/90 backdrop-blur-md shadow-md">
+
+                <div class="mx-auto flex min-h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+
+                    <!-- Logo -->
+                    <img src="vista.jpg" alt="AutoVista"
+                        class="h-12 w-12 rounded-full object-cover sm:h-14 sm:w-14 lg:h-16 lg:w-16">
+
+                    <div class="hidden items-center gap-6 font-bold text-white sm:flex md:gap-8 lg:gap-10">
+
+                        <a href="#HomePage" class="text-sm  hover:text-black md:text-base lg:text-lg">
+                            Home
+                        </a>
+
+                        <a href="#ProductPage" class="text-sm  hover:text-black md:text-base lg:text-lg">
+                            Product
+                        </a>
+
+                        <a href="#ContactPage" class="text-sm  hover:text-black md:text-base lg:text-lg">
+                            Contact
+                        </a>
+
+                    </div>
+
+                    <a href="#ProductPage"
+                        class=" rounded-lg bg-white px-4 py-2 font-semibold text-black transition hover:bg-[#362D2F] hover:text-white md:px-5 hidden sm:flex md:flex lg:flex">
+                        Book
+                    </a>
+
+                    <div class="block sm:hidden md:hidden lg:hidden">
+                        <i class="fa-solid fa-bars text-2xl text-white"></i>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </nav>
+
+
+        <!-- Home Page -->
+        <section id="HomePage">
+
+            <div class="relative min-h-screen bg-cover bg-center bg-no-repeat"
+                style="background-image: url('front.jpg');">
+
+                <div class="absolute inset-0 bg-black/50"></div>
+
+                <div class="relative z-10 flex min-h-screen flex-col gap-30 items-center justify-center px-4 pt-25 pb-10">
+
+                    <div class="w-full max-w-4xl text-center text-white">
+
+                        <p class="font-serif text-2xl font-semibold  sm:text-3xl md:text-4xl lg:text-5xl">
+                            "Drive With Confidence,
+                            <br>
+                            Rent Your Adventure."
+                        </p>
+
+                    </div>
+
+
+                    <!-- Check -->
+                    <div class="mt-20 w-full max-w-5xl sm:mt-28 lg:mt-32">
+
+                        <p class="mb-3 text-center text-base font-semibold text-white sm:text-lg sm:text-left">
+                            Check Availability:
+                        </p>
+
+                        <div class="rounded-3xl bg-white/80 p-3 shadow-xl backdrop-blur-sm sm:rounded-full">
+
+                            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+
+                                <div class="flex min-h-[50px] items-center rounded-xl bg-white px-4">
+                                    <i class="fa-solid fa-location-dot mr-3 text-[#B81069]"></i>
+
+                                    <input type="text" placeholder="Pick up location"
+                                        class="w-full text-sm font-semibold text-gray-700 placeholder:text-gray-500">
+                                </div>
+
+                                <div class="flex min-h-[50px] items-center rounded-xl bg-white px-4">
+                                    <i class="fa-regular fa-calendar mr-3 text-[#B81069]"></i>
+
+                                    <div class="flex-col">
+                                        <p class="text-xs font-semibold text-gray-700">Date of rental</p>
+                                        <input type="date" placeholder="Date of rental" class="w-full text-sm font-semibold text-gray-700">
+                                    </div>
+                                </div>
+
+                                <div class="flex  min-h-[50px] items-center rounded-xl bg-white px-4">
+                                    <i class="fa-regular fa-calendar-check mr-3 text-[#B81069]"></i>
+
+                                    <div class="flex-col">
+                                        <p class="text-xs text-gray-700 font-semibold">Date of return</p>
+                                        <input type="date" class="w-full text-sm font-semibold text-gray-700">
+                                    </div>
+                                </div>
+
+                                <button
+                                    class="min-h-[50px] rounded-xl bg-[#B81069] px-7 font-semibold text-white cursor-pointer hover:bg-pink-500">
+                                    Check
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Product Page -->
+        <section id="ProductPage" class="w-full bg-[#FBB7DB]/80 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+
+                <div class="mb-10 text-center sm:text-left">
+
+                    <p class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                        Check out our units
+                    </p>
+
+                    <div class="mt-2 h-[2px] w-20 rounded-full bg-[#B81069] hidden sm:block md:block lg:block"></div>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+
+                    <div v-for="product in products" :key="product.id"
+                        class=" rounded-2xl bg-black shadow-xl transition duration-300 hover:scale-102">
+
+                        <div class="relative aspect-[301/323]">
+
+                            <img :src="product.img" :alt="" class="h-full w-full rounded-xl">
+
+                            <div class="absolute top-0 text-center w-full p-4">
+
+                                <p
+                                    class="text-center text-2xl [-webkit-text-stroke:1px_pink] font-bold text-black sm:text-xl">
+                                    {{ product.model }}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-col gap-4 p-5">
+
+                            <h2 class="text-lg font-semibold text-white sm:text-xl">
+                                {{ product.brand }}
+                            </h2>
+
+                            <div class="flex items-center justify-between gap-3">
+
+                                <span class="text-base font-medium text-gray-400 sm:text-lg">
+                                    ${{ product.price }}/day
+                                </span>
+
+                                <button @click="Booked"
+                                    class="rounded-full bg-[#B81069] px-4 py-2 text-sm font-semibold text-white cursor-pointer hover:bg-pink-500 sm:px-5">
+                                    BOOK NOW
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact Page -->
+        <section id="ContactPage" class="w-full bg-[#FBB7DB] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+
+            <div class="mx-auto max-w-7xl">
+
+                <div class="mb-10 text-center sm:text-left">
+
+                    <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                        Contact Us
+                    </h2>
+
+                    <p class="mx-auto mt-3 max-w-2xl text-sm font-semibold text-[#4A4444] sm:mx-0 sm:text-base">
+                        We would love to hear from you!
+                        Questions about a booking, a vehicle,
+                        or partnering with us?
+                        Send a message and our team will get back to you.
+                    </p>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10">
+
+                    <!-- Direct Contact -->
+                    <div class="rounded-2xl bg-white/50 p-5 shadow-sm backdrop-blur-sm sm:p-7">
+
+                        <h3 class="mb-5 text-xl font-bold text-gray-900">
+                            Reach us directly:
+                        </h3>
+
+                        <div class="space-y-5">
+
+                            <div>
+                                <p class="font-semibold text-gray-900">
+                                    Mobile Number:
+                                </p>
+
+                                <p class="mt-1 text-gray-700">
+                                    0912 345 6789
+                                </p>
+                            </div>
+
+
+                            <div>
+                                <p class="font-semibold text-gray-900">
+                                    Email Address:
+                                </p>
+
+                                <p class="mt-1 block break-all text-gray-700">
+                                    support@luxrentals.com
+                                </p>
+                            </div>
+
+
+                            <div>
+                                <p class="font-semibold text-gray-900">
+                                    Main Office:
+                                </p>
+
+                                <p class="mt-1 leading-relaxed text-gray-700">
+                                    11F Insular Life Building, 6781
+                                    <br>
+                                    Ayala Avenue, Makati City
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <hr class="text-gray-500 my-5">
+
+                        <p class="mb-4 font-semibold text-gray-900">
+                            Get a fast reply on - Messenger
+                        </p>
+
+                        <button
+                            class="flex w-full max-w-sm items-center justify-center gap-2 rounded-full bg-black px-5 py-3 text-white cursor-pointer hover:bg-gray-800">
+
+                            <i class="fa-brands fa-facebook-messenger text-xl text-blue-500"></i>
+
+                            <span>
+                                Chat on Messenger
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Contact Form -->
+                    <div class="rounded-2xl bg-white/50 p-5 shadow-sm backdrop-blur-sm sm:p-7">
+
+                        <h3 class="mb-5 text-xl font-bold text-gray-900">
+                            Send us a message
+                        </h3>
+
+                        <div class="space-y-4">
+
+                            <input type="text" placeholder="Inquiry Type"
+                                class="h-12 w-full rounded-lg bg-[#D9D9D9] px-4 ">
+
+
+                            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+                                <input type="text" placeholder="Full Name"
+                                    class="h-12 w-full rounded-lg bg-[#D9D9D9] px-4">
+
+                                <input type="email" placeholder="Email Address"
+                                    class="h-12 w-full rounded-lg bg-[#D9D9D9] px-4">
+
+                            </div>
+
+                            <input type="tel" placeholder="Mobile Number"
+                                class="h-12 w-full rounded-lg bg-[#D9D9D9] px-4">
+
+                            <textarea placeholder="Message" rows="5"
+                                class="w-full resize-none rounded-lg bg-[#D9D9D9] px-4 py-3"></textarea>
+
+                            <button type="submit"
+                                class="rounded-full bg-[#F160AD] px-7 py-3 font-semibold text-black cursor-pointer hover:bg-[#B81069] hover:text-white">
+                                Send Inquiry
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="w-full bg-[#1E1E1E] text-white">
+
+            <div class="mx-auto w-full px-5 py-12 sm:px-8 lg:px-10">
+
+                <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+
+                    <div class="">
+
+                        <img src="vistaedit.jpg" alt="AutoVista" class="mb-5 h-auto w-48 max-w-full">
+
+                        <p class="max-w-sm text-sm text-gray-300">
+                            The Philippines' peer-to-peer car rental
+                            platform. Book quality self-drive vehicles
+                            at the lowest rates — anytime, anywhere.
+                        </p>
+
+                        <div class="mt-7">
+
+                            <p class="mb-3 font-semibold">
+                                Follow us on:
+                            </p>
+
+                            <div class="flex gap-3 text-2xl">
+
+                                <i class="fa-brands fa-facebook-f"></i>
+
+                                <i class="fa-brands fa-instagram"></i>
+
+                                <i class="fa-brands fa-tiktok"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-7 flex gap-3">
+
+                            <div class="flex items-center gap-2 rounded-lg bg-black  py-2">
+
+                                <i class="fa-brands fa-apple text-2xl"></i>
+
+                                <div>
+                                    <p class="text-[10px] text-gray-400">
+                                        Download on the
+                                    </p>
+
+                                    <p class="text-sm font-bold">
+                                        App Store
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="flex items-center gap-2 rounded-lg bg-black px-3 py-2">
+
+                                <i class="fa-brands fa-google-play text-xl"></i>
+
+                                <div>
+                                    <p class="text-[10px] text-gray-400">
+                                        Download on the
+                                    </p>
+
+                                    <p class="text-sm font-bold">
+                                        Google Play
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-8">
+
+                        <!-- Explore -->
+                        <div>
+                            <p class="mb-4 text-sm font-bold">
+                                Explore
+                            </p>
+
+                            <div class="mb-3 h-[1px] w-10 bg-white"></div>
+
+                            <ul class="space-y-2 text-sm text-gray-300">
+
+                                <li class="hover:text-white cursor-pointer"> About Us </li>
+
+                                <li class="hover:text-white cursor-pointer"> How it works </li>
+
+                                <li class="hover:text-white cursor-pointer"> Contact Us </li>
+
+                                <li class="hover:text-white cursor-pointer"> Apply as Operator </li>
+
+                                <li class="hover:text-white cursor-pointer"> Privacy Policy </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <!-- Help -->
+                        <div>
+                            <p class="mb-4 text-sm font-bold">
+                                Help
+                            </p>
+
+                            <div class="mb-3 h-[1px] w-10 bg-white"></div>
+
+                            <ul class="space-y-2 text-sm text-gray-300">
+
+                                <li class="hover:text-white cursor-pointer">Before you book </li>
+
+                                <li class="hover:text-white cursor-pointer">Ahead of your trip </li>
+
+                                <li class="hover:text-white cursor-pointer">Help on the road </li>
+
+                                <li class="hover:text-white cursor-pointer">After your journey </li>
+
+                                <li class="hover:text-white cursor-pointer">Account & App </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                    <!-- About / Deals -->
+                    <div class="grid grid-cols-2 gap-8">
+
+                        <div>
+
+                            <p class="mb-4 text-sm font-bold">
+                                About
+                            </p>
+
+                            <div class="mb-3 h-[1px] w-10 bg-white"></div>
+
+                            <ul class="space-y-2 text-sm text-gray-300">
+
+                                <li class="hover:text-white cursor-pointer">
+                                    Why go with us?
+                                </li>
+
+                                <li class="hover:text-white cursor-pointer">
+                                    Our Team
+                                </li>
+
+                                <li class="hover:text-white cursor-pointer">
+                                    Work for Us
+                                </li>
+
+                                <li class="hover:text-white cursor-pointer">
+                                    News
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div>
+                            <p class="mb-4 text-sm font-bold">
+                                Deals
+                            </p>
+
+                            <div class="mb-3 h-[1px] w-10 bg-white"></div>
+
+                            <ul class="space-y-2 text-sm text-gray-300">
+
+                                <li class="hover:text-white cursor-pointer">
+                                    Hot Deals
+                                </li>
+
+                                <li class="hover:text-white cursor-pointer">
+                                    Partner Deals
+                                </li>
+
+                                <li class="hover:text-white cursor-pointer">
+                                    Sudima Hotels
+                                </li>
+
+                                <li class="hover:text-white cursor-pointer">
+                                    RealINZ
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Logos -->
+                <div class="mt-12">
+
+                    <div class=" rounded-xl bg-white/80 p-3">
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 flex">
+                            <img src="https://www.autodeal.com.ph/images/essentials/logo_black.svg?20260930-1"
+                                alt="AutoDeal" class="h-10 w-20">
+    
+                            <img src="https://www.autodeal.com.ph/images/essentials/motodeal.svg?20260930-1" alt="MotoDeal"
+                                class="h-10 w-20 object-contain">
+    
+                            <img src="https://www.autodeal.com.ph/images/essentials/TruckDeal-Black.svg?20260930-1"
+                                alt="TruckDeal" class="h-10 w-20">
+    
+                            <img src="https://www.autodeal.com.ph/images/essentials/AD-Business-logo.svg?20260930-1"
+                                alt="AutoDeal Business" class="h-10 w-20">
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- Free Gift -->
+                <div class="mt-8 flex flex-col items-start gap-3">
+
+                    <p class="text-sm text-gray-300">
+                        Already rent your car?
+                    </p>
+
+                    <div
+                        class="flex items-center gap-3 rounded-xl border border-white px-5 py-3 cursor-pointer hover:bg-white hover:text-black">
+
+                        <i class="fa-solid fa-gift text-2xl text-red-300"></i>
+
+                        <span class="text-sm">
+                            Claim your <br>
+
+                            <span class="font-bold text-xl">
+                                Free Gift
+                            </span>
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="mt-10 border-t border-gray-700 pt-5">
+                    <p class="text-xs text-gray-400 sm:text-sm">
+                        Copyright © AutoVista.com | All rights reserved.
+                    </p>
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        Vue.createApp({
+
+            data() {
+
+                return {
+
+                    mobileMenu: false,
+
+                    products: [
+
+                        {
+                            id: 1,
+                            img: 'pinkedit.jpg',
+                            brand: 'Mercedes G Wagon',
+                            model: 'Mercedes G Wagon Pink',
+                            price: 480
+                        },
+
+                        {
+                            id: 2,
+                            img: 'https://i.pinimg.com/736x/3d/45/65/3d4565858bce3f94a09cf5446ae479a9.jpg',
+                            brand: 'Lamborghini Huracan',
+                            model: 'Lamborghini Huracan Tecnica',
+                            price: 500
+                        },
+
+                        {
+                            id: 3,
+                            img: 'https://down-ph.img.susercontent.com/file/id-11134207-822wi-mpyjnpdzy77ka6.webp',
+                            brand: 'Diecast Nissan',
+                            model: 'Diecast Nissan GTR R35',
+                            price: 420
+                        },
+
+                        {
+                            id: 4,
+                            img: 'https://i.pinimg.com/736x/c0/7b/19/c07b1929b0d2a15a7b08e1916370173b.jpg',
+                            brand: 'Mercedes G Wagon',
+                            model: 'Mercedes G Wagon Black',
+                            price: 480
+                        },
+
+                        {
+                            id: 5,
+                            img: 'urusedit.jpg',
+                            brand: 'Lamborghini Urus',
+                            model: 'Lamborghini Urus Essenza',
+                            price: 500
+                        },
+
+                        {
+                            id: 6,
+                            img: 'caprioedit.jpg',
+                            brand: 'Mercedes Benz Cabrio',
+                            model: 'Mercedes Benz S63 Cabrio',
+                            price: 420
+                        }
+
+                    ]
+
+                }
+
+            }, methods: {
+                Booked (){
+                    alert('Booked Successfully.');
+                }
+            },
+
+        }).mount('#app');
+
+    </script>
+
+</body>
+
+</html>
+```
